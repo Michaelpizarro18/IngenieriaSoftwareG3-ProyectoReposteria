@@ -51,7 +51,7 @@ ADD foto image;
 
 SELECT * FROM Producto
 UPDATE Producto
-SET receta = N'Para el delicioso pastel de fresa, mezcla 2 1/2 tazas de harina de trigo, 1 1/2 tazas de az˙car, 1 taza de leche, 1/2 taza de mantequilla derretida, 4 huevos, 2 cucharaditas de polvo de hornear, 1 cucharadita de extracto de vainilla y 1/4 de cucharadita de sal. Divide la masa entre dos moldes de 23 cm y hornea a 180∞C durante 25-30 minutos. Deja enfriar y coloca uno de los pasteles en un plato. Cubre con crema batida y fresas, luego coloca el segundo pastel encima y decora con m·s crema batida, fresas y az˙car glas (opcional). °Listo para disfrutar este delicioso pastel de fresa!'
+SET receta = N'Para el delicioso pastel de fresa, mezcla 2 1/2 tazas de harina de trigo, 1 1/2 tazas de az√∫car, 1 taza de leche, 1/2 taza de mantequilla derretida, 4 huevos, 2 cucharaditas de polvo de hornear, 1 cucharadita de extracto de vainilla y 1/4 de cucharadita de sal. Divide la masa entre dos moldes de 23 cm y hornea a 180¬∞C durante 25-30 minutos. Deja enfriar y coloca uno de los pasteles en un plato. Cubre con crema batida y fresas, luego coloca el segundo pastel encima y decora con m√°s crema batida, fresas y az√∫car glas (opcional). ¬°Listo para disfrutar este delicioso pastel de fresa!'
 WHERE idProducto = 622;
 
 CREATE TABLE Venta(
@@ -92,7 +92,7 @@ GO
 CREATE TABLE Cuenta (
 IDCuenta int identity (1,1) primary key,
 Usuario varchar (50),
-ContraseÒa varchar (50)
+Contrase√±a varchar (50)
 );
 Go
 ----------------------------------
@@ -100,7 +100,7 @@ Go
 
 Insert Into Cuenta Values ('Paula','paula123456');
 -----------------------------------
---CATEGORÕAS
+--CATEGOR√çAS
 INSERT INTO Categoria (catnombre) VALUES
 ('Pasteles'),
 ('Galletas'),
@@ -110,8 +110,8 @@ go
 
 --PROVEEDORES
 INSERT INTO Proveedor (pronombre, direccion) VALUES
-('Mercado de IngenierÌa', 'Av. Luna Pizarro 277, San MartÌn de Porres 15103'),
-('Mercado Milagros','Ca. Sta. Mercedes 184, San MartÌn de Porres 15103')
+('Mercado de Ingenier√≠a', 'Av. Luna Pizarro 277, San Mart√≠n de Porres 15103'),
+('Mercado Milagros','Ca. Sta. Mercedes 184, San Mart√≠n de Porres 15103')
 go
 
 --PRODUCTOS
@@ -290,7 +290,7 @@ BEGIN
     FROM
         Cuenta
     WHERE
-        Usuario = @usuario AND ContraseÒa = @contrasena;
+        Usuario = @usuario AND Contrase√±a = @contrasena;
 END;
 -----------------------------
 
@@ -301,7 +301,7 @@ CREATE PROCEDURE BuscarProductosPorCategoria
     @idCategoria int
 AS
 BEGIN
-    -- Consulta para buscar productos por categorÌa
+    -- Consulta para buscar productos por categor√≠a
     SELECT 
         idProducto,
         nombre,
@@ -316,7 +316,7 @@ END;
 
 ------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerIdCategoria
-    @nombreCategoria NVARCHAR(100)  -- Ajusta el tipo de datos seg˙n tu necesidad
+    @nombreCategoria NVARCHAR(100)  -- Ajusta el tipo de datos seg√∫n tu necesidad
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -328,7 +328,7 @@ END;
 GO
 --------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerProductosPorCategoria
-    @nombreCategoria NVARCHAR(100)  -- Ajusta el tipo de datos seg˙n tu necesidad
+    @nombreCategoria NVARCHAR(100)  -- Ajusta el tipo de datos seg√∫n tu necesidad
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -340,7 +340,7 @@ END;
 GO
 -----------------------------------------------------
 CREATE PROCEDURE ObtenerIdProductoPorNombre
-    @nombreProducto NVARCHAR(100)  -- Ajusta el tipo de datos seg˙n tu necesidad
+    @nombreProducto NVARCHAR(100)  -- Ajusta el tipo de datos seg√∫n tu necesidad
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -352,7 +352,7 @@ END;
 GO
 ------------------------------------------------
 CREATE PROCEDURE ObtenerPrecioProductoPorNombre
-    @nombreProducto NVARCHAR(255)  -- Ajusta el tipo de datos seg˙n tu necesidad
+    @nombreProducto NVARCHAR(255)  -- Ajusta el tipo de datos seg√∫n tu necesidad
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -364,7 +364,7 @@ END;
 GO
 ----------------------------------------------------
 CREATE PROCEDURE ContarVentasPorId
-    @idVenta INT  -- Ajusta el tipo de datos seg˙n tu necesidad
+    @idVenta INT  -- Ajusta el tipo de datos seg√∫n tu necesidad
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -376,7 +376,7 @@ END;
 GO
 -----------------------
 CREATE PROCEDURE EliminarDetallePorIdVenta
-    @idVenta INT  -- Ajusta el tipo de datos seg˙n tu necesidad
+    @idVenta INT  -- Ajusta el tipo de datos seg√∫n tu necesidad
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -387,7 +387,7 @@ END;
 GO
 -------------------------------------------------------
 CREATE PROCEDURE EliminarVentaPorId
-    @idVenta INT  -- Ajusta el tipo de datos seg˙n tu necesidad
+    @idVenta INT  -- Ajusta el tipo de datos seg√∫n tu necesidad
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -398,7 +398,7 @@ END;
 GO
 ---------------------------------------------
 CREATE PROCEDURE ObtenerDetallePorIdVenta
-    @idVenta INT  -- Ajusta el tipo de datos seg˙n tu necesidad
+    @idVenta INT  -- Ajusta el tipo de datos seg√∫n tu necesidad
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -410,7 +410,7 @@ END;
 GO
 ----------------------------------------------------------
 CREATE PROCEDURE ObtenerTotalYIdVenta
-    @idVenta INT  -- Ajusta el tipo de datos seg˙n tu necesidad
+    @idVenta INT  -- Ajusta el tipo de datos seg√∫n tu necesidad
 AS
 BEGIN
     SET NOCOUNT ON;
